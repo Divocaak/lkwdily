@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <title>Pevaro</title>
+
+    <style>
+        .bgImage {
+            position: relative;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 1080px;
+        }
+        
+        .textBox {
+            position: relative;
+            padding: 3em 10em;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="imgs/logo.jpg" alt="" width="120" height="50" class="d-inline-block align-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#eshop">E-shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catalogs">Katalogy karosářských dílů</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#paintShop">Lakovna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#transport">Doprava</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#terms">Obchodní podmínky</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts">Kontakty</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Česky</a>
+                            <a class="dropdown-item" href="#">Deutsch</a>
+                            <a class="dropdown-item" href="#">English</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid bgImage" style="background-image: url(imgs/00.jpg);"></div>
+    <div class="container-fluid textBox" id="eshop">
+        <div class="row">
+            <div class="col text-center">
+                <h1>E-shop</h1>
+                <p>Pro vstup do našeho e-shopu se musíte přihlásit, nebo registrovat, pokud ještě nemáte účet.</p>
+            </div>
+            <div class="col text-center">
+                <br>
+                <a href="register.php" class="btn btn-outline-secondary" role="button">Registrovat se</a>
+                <a href="login.php" class="btn btn-primary" role="button">Přihlásit se</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bgImage" style="background-image: url(imgs/01.jpg);"></div>
+    <div class="container-fluid textBox" id="catalogs">
+        <h1>Katalogy karosářských dílů</h1><br><br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"><img src="imgs/cospel.png" style="height: 75px; width: auto;"></th>
+                    <th scope="col"><img src="imgs/covind.jpg" style="height: 40px; width: auto;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">DAF</th>
+                    <td><a class="btn btn-primary" href="http://www.lkwdily.cz/img/cms/dokumenty/CosPel_2014_DAF.pdf" role="button" target="_blank">Otevřít</a></td>
+                    <td><a class="btn btn-primary" href="http://admin.onedit.it/OnEditAdmin/upload/36/cataloghi/ebook/1-DAF_2017.pdf" role="button" target="_blank">Otevřít</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Iveco</th>
+                    <td><a class="btn btn-primary" href="http://www.lkwdily.cz/img/cms/dokumenty/CosPel_2014_Iveco.pdf" role="button" target="_blank">Otevřít</a></td>
+                    <td><a class="btn btn-primary" href="http://admin.onedit.it/OnEditAdmin/upload/36/cataloghi/ebook/4-IVECORunning_11-2015web.pdf" role="button" target="_blank">Otevřít</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">MAN</th>
+                    <td><a class="btn btn-primary" href="http://www.lkwdily.cz/img/cms/dokumenty/CosPel_2014_MAN.pdf" role="button" target="_blank">Otevřít</a></td>
+                    <td><a class="btn btn-primary" href="http://admin.onedit.it/OnEditAdmin/upload/36/cataloghi/ebook/6-MAN_2-2017_lr.pdf" role="button" target="_blank">Otevřít</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Mercedes</th>
+                    <td><a class="btn btn-primary" href="http://www.lkwdily.cz/img/cms/dokumenty/CosPel_2014_Mercedes-Benz.pdf" role="button" target="_blank">Otevřít</a></td>
+                    <td><a class="btn btn-primary" href="http://admin.onedit.it/OnEditAdmin/upload/36/cataloghi/ebook/7-MBENZ_2017.pdf" role="button" target="_blank">Otevřít</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Renault</th>
+                    <td><a class="btn btn-primary" href="http://www.lkwdily.cz/img/cms/dokumenty/CosPel_2014_RVI.pdf" role="button" target="_blank">Otevřít</a></td>
+                    <td><a class="btn btn-primary" href="http://admin.onedit.it/OnEditAdmin/upload/36/cataloghi/ebook/8-Renault_2017.pdf" role="button" target="_blank">Otevřít</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Scania</th>
+                    <td><a class="btn btn-primary" href="http://www.lkwdily.cz/img/cms/dokumenty/CosPel_2014_Scania.pdf" role="button" target="_blank">Otevřít</a></td>
+                    <td><a class="btn btn-primary" href="http://admin.onedit.it/OnEditAdmin/upload/36/cataloghi/ebook/9-SCANIA_2017.pdf" role="button" target="_blank">Otevřít</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Volvo</th>
+                    <td><a class="btn btn-primary" href="http://www.lkwdily.cz/img/cms/dokumenty/CosPel_2014_Volvo.pdf" role="button" target="_blank">Otevřít</a></td>
+                    <td><a class="btn btn-primary" href="http://admin.onedit.it/OnEditAdmin/upload/36/cataloghi/ebook/10-VOLVO_2017.pdf" role="button" target="_blank">Otevřít</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container-fluid bgImage" style="background-image: url(imgs/narazniky.jpg);"></div>
+    <div class="container-fluid textBox" id="paintShop">
+        <h1>Lakovna</h1><br>
+        <div class="row">
+            <div class="col">
+                <p>Ve vlastní lakovně Vám za bezkonkurenční ceny nabízíme lakování u nás zakoupených karosářských dílů.</p>
+                <p>Používáme laky <a href="https://www.toplac.cz/" target="_blank">Glasurit řady 68</a></p>
+                <p>Dodací lhůta je cca 2 - 3 dny od objednání.</p>
+                <p>Konkrétní ceny a termín dodání Vám rádi sdělíme na obchod@pevaro.cz</p>
+            </div>
+            <div class="col">
+                <table class="table table-sm table-borderless table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Díl</th>
+                            <th scope="col">Barva</th>
+                            <th scope="col">Cena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nárazník DAF XF 105</th>
+                            <td>H3279</td>
+                            <td>1000,–</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nárazník MAN TGX</th>
+                            <td>5002</td>
+                            <td>2500,–</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Spodní schod Iveco Stralis</th>
+                            <td>IC194</td>
+                            <td>800,–</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Spodní schod Renault New Premium</th>
+                            <td>R389</td>
+                            <td>680,–</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bgImage" style="background-image: url(imgs/02.jpg);"></div>
+    <div class="container-fluid textBox" id="transport">
+        <h1>Doprava</h1>
+        <p>Dopravu zboží zajišťujeme po České a Slovenské republice prostřednictvím smluvně zajištěných dopravců PPL a Toptrans</p><br>
+        <div class="row">
+            <div class="col">
+                <h5>PPL v ČR</h5>
+                <p>Cena jednoho balíku: Kč 120,– bez DPH</p>
+                <p>Maximální hmotnost balíku je 50 kg.</p>
+                <p>Max. rozměr balíku pro ČR a SR: 2&times;&nbsp;šířka + 2&times;&nbsp;výška + 1&times;&nbsp;délka &lt; 3 m</p>
+                <br>
+                <p>Pro jednotlivé rozměry platí:</p>
+                <p>šířka max. 80 cm</p>
+                <p>výška max. 60 cm</p>
+                <p>délka max. 200 cm</p>
+            </div>
+            <div class="col">
+                <h5>Toptrans</h5>
+                <p>Společnost Toptrans využíváme pro přepravu nadrozměrných zásilek a zásilek do Slovenské republiky.</p>
+                <p>Orientační ceník si můžete prohlédnout <a href="http://www.toptrans.cz/portal/page/portal/toptrans_www_cz/ceny_prepravy/tabulka_sazeb_cr" target="_blank">zde</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bgImage" style="background-image: url(imgs/03.jpg);"></div>
+    <div class="container-fluid textBox" id="terms">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Obchodní podmínky</h1>
+            </div>
+            <div class="col text-center">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                    Zobrazit podmínky
+                </button>
+            </div>
+        </div>
+
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Obchodní podmínky</h5>
+                        <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3><strong>I.</strong></h3>
+                        <h5><strong>Prodávající</strong></h5>
+                        <table style="height: 164px;" width="564">
+                            <tbody>
+                                <tr>
+                                    <td>Obchodní jméno:</td>
+                                    <td>PEVARO s.r.o.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sídlo:</td>
+                                    <td>
+                                        <p>Novohradská 736/36, 370 01 České Budějovice</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>IČO:</td>
+                                    <td>28113080</td>
+                                </tr>
+                                <tr>
+                                    <td>DIČ:</td>
+                                    <td>CZ28113080</td>
+                                </tr>
+                                <tr>
+                                    <td>Zápis u OR:</td>
+                                    <td>Společnost je zapsána u krajského soudu v Českých Budějovicích oddíl C, vložka 18342</td>
+                                </tr>
+                                <tr>
+                                    <td>Číslo bankovního účtu:</td>
+                                    <td> Raiffeisen Bank - 7110572001/5500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="height: 124px;" width="369">
+                            <tbody>
+                                <tr>
+                                    <td>Telefon: </td>
+                                    <td>+ 420 387 200 623</td>
+                                </tr>
+                                <tr>
+                                    <td>Mobil:</td>
+                                    <td>
+                                        <p>+ 420 603 336 532</p>
+                                        <p>+ 420 734 748 833</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Web:</td>
+                                    <td>www.lkwdily.cz</td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td>obchod@pevaro.cz</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>II.</h4>
+                        <p><strong>Prohlášení</strong></p>
+                        <p>Veškeré zde uvedené součástky <strong>nejsou díly originální, </strong>přesto jsou s nimi stoprocentně zaměnitelné. Referenční čísla originálních dílů jsou uvedena pouze informativně za účelem jednoduššího vyhledávání.</p>
+                        <p><strong>Všeobecná ustanovení</strong></p>
+                        <p><strong>1. </strong>Předmětem těchto Všeobecných obchodních podmínek PEVARO s.r.o. (dále jen VOP) vydaných prodávajícím v souladu s ust. §273 zák. č. 513/1991 Sb., obchodního zákoníku v platném znění, je úprava podmínek, za kterých
+                            bude prodávající dodávat kupujícímu zboží, dále pak stanoví práva a povinností smluvních stran při vzájemném obchodování.</p>
+                        <p><strong>2. </strong>V případě, že kupujícím je osoba s přiděleným daňovým identifikačním číslem, řídí se práva a povinnosti smluvních stran neupravené v těchto VOP zák. č.513/1991 Sb., obchodního zákoníku v platném znění.</p>
+                        <p><strong>3. </strong>V případě, že kupujícím je fyzická osoba - občan (ne podnikatel), řídí se práva a povinnosti smluvních stran v souladu se zákonem č. 40/1964 Sb., občanského zákoníku v platném znění.</p>
+                        <p> </p>
+                        <p><strong>III.</strong></p>
+                        <p><strong>Dodací podmínky/Uzavření kupní smlouvy/Objednávka</strong></p>
+                        <p><strong>1. </strong>Dodávky zboží jsou prodávajícím realizovány na základě objednávky, podané prostřednictvím elektronického obchodu <a href="http://www.lkwdily.cz/">www.lkwdily.cz</a>, která je považována za návrh KUPNÍ SMLOUVY
+                            (dále jen KS). Kupní smlouva vzniká okamžikem převzetí objednaného zboží kupujícím. Podáním objednávky kupující stvrzuje, že se seznámil s platnými obchodními podmínkami a reklamačním řádem a že s nimi souhlasí.</p>
+                        <p><strong>Potvrzení objednávky</strong></p>
+                        <p>Objednávka je přijata do 24 hodin, potvrzení objednávky Vám zašleme e-mailem, o odeslání budete taktéž informováni e-mailem. Pro potvrzení Vás u některých objednávek (např. při odběru většího množství apod.) zkontaktujeme telefonicky.</p>
+                        <p><strong>Zrušení objednávky</strong></p>
+                        <p>Každou objednávku můžete do potvrzení objednávky zrušit a to výhradně e-mailem zaslaným na adresu <a href="mailto:obchod@pevaro.cz">obchod@pevaro.cz</a><strong> </strong></p>
+                        <p><strong>2. </strong>Údaje v objednávce uvedené kupujícím musí být pravdivé a přesné. Vlastnické právo ke zboží přechází na kupujícího po zaplacení kupní ceny a jeho převzetím. Kupující se zavazuje odebrat závazně objednané zboží
+                            a zaplatit celkovou cenu včetně nákladů na dopravu, není-li uvedeno jinak. Pokud kupující nesplní svůj závazek odebrat a zaplatit objednané zboží, má prodávající právo odmítnout další objednávky tohoto kupujícího.</p>
+                        <p><strong>3. </strong>Místo dodání zboží specifikuje kupující svojí objednávkou. Prodávající dodává zboží nakoupené kupujícím na adresu uvedenou v objednávce externí přepravní službou GEIS. Podmínky přepravy a termín dodání zakoupeného
+                            zboží sjednává prodejce s kupujícím při každém obchodním případu nebo jsou stanoveny předem na základě vzájemné dohody. <em>(řídí se bodem 5) </em></p>
+                        <p><strong>4. </strong>Za zboží dodávané kupujícímu prostřednictvím externích přepravců je kupujícímu účtována sazba podle aktuálního ceníku jednotlivých přepravců. Výběr dopravy provádí kupující v objednávkovém formuláři.</p>
+                        <p><strong>5.  </strong>Dodací lhůta je uvedena u každé položky v eshopu. V případě, že nebude možné objednávku vyřídit, budeme Vás o této skutečnosti neprodleně informovat. Prodávající si vyhrazuje právo zrušit objednávku nebo její
+                            část v těchto případech:<br /> - zboží se již nevyrábí nebo nedodává nebo se výrazným způsobem změnila cena dodavatele zboží. V případě, že tato situace nastane, prodávající bude neprodleně kontaktovat kupujícího za účelem
+                            dohody o dalším postupu.</p>
+                        <p><strong>6. Odstoupení od KS – vrácení zboží</strong></p>
+                        <p>V souladu se zákonem č. 367/2000 má zákazník právo odstoupit od smlouvy do 14 dní od převzetí zboží. Rozhodne-li se pro odstoupení v této lhůtě a dodrží níže uvedené podmínky, bude mu vrácena kupní cena:</p>
+                        <p>- kontaktujte nás na emailu <a href="mailto:obchod@pevaro.cz">obchod@pevaro.cz</a>, budeme Vás kontaktovat, abychom se dohodli na způsobu vrácení zboží</p>
+                        <p>- zboží, které budete vracet v rámci této záruky zpět musí být zabaleno v původním obalu, nesmí nést známky užití, musí byt nepoškozené, kompletní (včetně příslušenství, záručního listu, návodu atd.) a musí být odesláno s kopií
+                            dokladu o koupi;</p>
+                        <p>- náklady na přepravu zboží k dodavateli nese v plné výši zákazník;</p>
+                        <p>- peníze za zboží Vám budou vráceny převodem na Váš účet a to nejpozději do 14ti dnů od odstoupení od smlouvy.</p>
+                        <p>Prodávající odpovídá kupujícímu za to, že prodávaná věc je při převzetí kupujícím ve shodě s kupní smlouvou, zejména, že je bez vad. V případě rozporu s kupní smlouvou má zákazník právo od smlouvy odstoupit. Kupující právo na to,
+                            aby prodávající bezplatně a bez zbytečného odkladu věc uvedl do stavu odpovídajícího kupní smlouvě, a to podle požadavku kupujícího buď výměnou věci, nebo její opravou. Není-li takový postup možný, může kupující požadovat přiměřenou
+                            slevu z ceny věci nebo od smlouvy odstoupit. To neplatí, pokud kupující před převzetím věci o rozporu s kupní smlouvou věděl nebo rozpor s kupní smlouvou sám způsobil.</p>
+                        <p> </p>
+                        <p><strong>IV. </strong></p>
+                        <p><strong>Kupní cena za zboží, daňové doklady, platba</strong></p>
+                        <p><strong>1.</strong> Prodávající nabízí kupujícímu zboží za prodejní ceny platné ke dni uskutečnění objednávky zboží, pokud není stanoveno jinak. Kupní cena je vždy uváděna bez DPH i s DPH.</p>
+                        <p><strong>2.</strong> Prodávající si tímto vyhrazuje právo průběžné úpravy ceny za zboží v návaznosti na úpravě cen od svých dodavatelů. Ceny za objednané zboží zůstávají těmito úpravami nedotčeny.</p>
+                        <p><strong>3.</strong> Kupní ceny k jednotlivým položkám má kupující k dispozici on-line na eshopu prodávajícího.</p>
+                        <p><strong>4.</strong> Za dodávku zboží dle požadavku kupujícího zaplatí kupující prodávajícímu kupní cenu, kterou je možno uhradit:</p>
+                        <p><strong>a)</strong> v případě, že kupujícím je fyzická osoba - občan (ne podnikatel)<strong> </strong></p>
+                        <p><strong>- hotově dobírkou</strong></p>
+                        <p><strong>b) </strong>v případě, že kupujícím je osoba s přiděleným daňovým identifikačním číslem<strong> </strong></p>
+                        <p><strong>- hotově dobírkou</strong></p>
+                        <p><strong>- předem na základě zálohové faktury</strong></p>
+                        <p><strong>- převodním příkazem</strong> na základě rozhodnutí prodávajícího</p>
+                        <p> </p>
+                        <p><strong>V.</strong></p>
+                        <p><strong>Záruční a reklamační podmínky</strong></p>
+                        <p><strong>1. </strong>V případě, že kupujícím je osoba s přiděleným daňovým identifikačním číslem, poskytne prodávající kupujícímu záruku na jakost svého zboží v délce 12-ti měsíců od data jeho prodeje. V případě, že výrobce příslušného
+                            zboží poskytuje delší záruční dobu, poskytne ji i prodávající kupujícímu. Tuto prodlouženou záruční lhůtu deklaruje prodávající kupujícímu písemně, na základě požadavku kupujícího.</p>
+                        <p><strong>2.</strong> V případě, že kupujícím je fyzická osoba - občan (ne podnikatel), poskytne prodávající kupujícímu záruku v souladu se zákonem č. 40/1964 Sb., občanský zákoník v platném znění.</p>
+                        <p><strong>3.</strong> Vznikne-li na zboží dodaném elektronickým obchodem <a href="http://www.lkwdily.cz/">www.lkwdily.cz</a> reklamační důvod, může kupující uplatnit reklamaci e-mailem. Písemné oznámení o zjištěných závadách uplatňuje
+                            kupující na e-mailové adrese: <a href="mailto:obchod@pevaro.cz">obchod@pevaro.cz</a></p>
+                        <p><br /><strong>Oznámení o závadách musí obsahovat:</strong></p>
+                        <p><strong> </strong>Jméno kupujícího, adresu, telefonní číslo, e-mail, číslo objednávky, podrobný popis závady. Ve všech případech je třeba předložit kopii faktury a doklad o zaplacení a dodání zboží, jehož vady jsou reklamovány.
+                            Zboží musí být předáno ve stavu, který umožňuje objektivní posouzení reklamované vady. Kupující uplatňuje reklamaci na kvalitu zboží zakoupeného u prodávajícího dle podmínek těchto VOP.</p>
+                        <p><strong>4.</strong> Případnou záměnu nebo množstevní rozdíl zboží proti dodacím dokladům reklamuje kupující nejpozději do tří pracovních dnů od data převzetí dodávky. Po uplynutí této lhůty prodávající za tyto vady v dodávce neodpovídá.</p>
+                        <p><strong>5.</strong> V případě, že má zboží dodané kupujícímu prostřednictvím externího dopravce zboží zjevnou vadou, je povinností kupujícího sepsat s dopravcem zápis o takové skutečnosti, nebo zboží nepřevzít. Pokud kupující takový
+                            zápis k reklamaci nedoloží, vystavuje se možnosti neuznání reklamace prodávajícím.</p>
+                        <p><strong>6.</strong> Záruční doba se nevztahuje na přirozené opotřebení zboží způsobené jeho obvyklým užíváním, na škody způsobené chemickými vlivy a na škody způsobené nevhodným skladováním u kupujícího. Prodávající neručí ani
+                            za škody způsobené nevhodnou obsluhou či nesprávným používáním pro dané zboží obvyklým a za škody způsobené přetěžováním vozidla. Kupující je na základě vyžádání prodávajícího povinen prokázat, že reklamované zboží bylo namontováno
+                            v souladu s technologickým postupem vydaným výrobcem vozidla, nebo že bylo namontováno nebo instalováno odborným servisem.</p>
+                        <p><strong>7. </strong>Jde-li u reklamovaného zboží o odstranitelnou vadu, má kupující právo na její bezplatné a řádné odstranění. Není-li to úměrné povaze vady, má kupující právo na výměnu zboží nebo na vrácení peněz. V těchto případech
+                            začne běžet nová záruční doba dnem převzetí opraveného resp. vyměněného zboží kupujícím.</p>
+                        <p><strong>8. </strong>U výprodejového zboží prodávaného se slevou se záruka nevztahuje na vady, pro které byla sleva přiznána.</p>
+                        <p> </p>
+                        <p>VI:</p>
+                        <p><strong>Další sjednané podmínky</strong></p>
+                        <p><strong>1.</strong> Kupující prohlašuje, že je bez omezení schopen plnit své splatné závazky, zejména že jeho majetek není v situaci, pro kterou zvláštní zákon stanoví povinnost podat návrh na prohlášení insolvenčního řízení, není
+                            dlužníkem v insolvenčním řízení, nebyl zamítnut insolvenční návrh pro nedostatek majetku dlužníka a rovněž že na jeho majetek není vedena exekuce nebo není jinak postižen nebo omezen výkonem rozhodnutí.</p>
+                        <p><strong>2.</strong> Kupující prohlašuje, že je způsobilý k právním úkonům a dále že osoby za něj v jeho zastoupení při jednotlivých obchodních případech jednající jsou k tomu oprávněny.</p>
+                        <p><strong>3. </strong>Kupující odpovídá za škodu, kterou by způsobila případná nepravdivost či nepřesnost prohlášení učiněných v tomto článku nebo porušení zde uvedených či jakýchkoli jiných povinností ze smlouvy.</p>
+                        <p><strong>4. </strong>Všechny smluvní vztahy, které mezi prodávajícím a kupujícím již vznikly a stále trvají, nebo v budoucnu vzniknou, se řídí těmito VOP.</p>
+                        <p><strong>5</strong>. Předáním objednávky kupující bez výhrad akceptuje cenu zboží, podmínky dodávky a veškerá ustanovení VOP ve znění platném v den předání objednávky, jakož i v den odeslání objednaného zboží.</p>
+                        <p><strong>7. </strong>Kupující vyplněním registračního/objednávkového formuláře souhlasí s obchodními podmínkami prodávajícího. Prodávající prohlašuje, že veškeré osobní údaje jsou považovány za přísně důvěrné a je s nimi nakládáno
+                            v souladu se zákonem č. 101/2000Sb. V žádném případě neposkytujeme tyto údaje třetí straně. Zákazník může písemně zažádat o odstranění údajů z databáze společnosti.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zavřít</button>
+                        <a class="btn btn-primary" href="terms.pdf" target="_blank">Otevřít PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid bgImage" style="background-image: url(imgs/04.jpg);"></div>
+    <div class="container-fluid textBox" id="contacts">
+        <div class="row">
+            <div class="col">
+                <p>IČ: 28113080</p>
+                <p>DIČ: CZ28113080</p>
+                <p>číslo účtu: 7110572001/5500</p>
+            </div>
+            <div class="col">
+                <h6>Kontakty</h6>
+                <p>email: pevaro@email.cz</p>
+                <p>mob.: +420 603 336 532</p>
+            </div>
+            <div class="col">
+                <h6>Sídlo (pouze fakturační adresa)</h6>
+                <p>Novohradská 736/36</p>
+                <p>České Budějovice</p>
+                <p>370 01</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h6>Provozovna</h6>
+                <p>Na Papírně 691</p>
+                <p>Lomnice nad Lužnicí</p>
+                <p>378 16</p>
+            </div>
+            <div class="col">
+                <h6>Otevírací doba</h6>
+                <p>Pondělí 8 - 17 hod</p>
+                <p>Úterý 8 - 17 hod</p>
+                <p>Středa 8 - 17 hod</p>
+                <p>Čtvrtek 8 - 17 hod</p>
+                <p>Pátek 8 - 17 hod</p>
+            </div>
+            <div class="col">
+                <iframe width="600" height="450" style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6036.718737052956!2d14.71276443502916!3d49.084869107047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x98e466fe4a883f30!2sPEVARO+s.r.o.!5e1!3m2!1scs!2scz!4v1537880887445"
+                    frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bgImage" style="background-image: url(imgs/05.jpg);"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+
+</html>
