@@ -35,6 +35,7 @@
 
 ## Probíhající
 
+* řazení, funkčnost
 * ovládací panel e-shopu
     1. řazení
         * dropdown
@@ -50,7 +51,6 @@
 
 ## To-do list
 
-* řazení, funkčnost
 * v detailu produktu je empty row nad kodem produktu, odstranit hover effect
 * "potvrdit objednávku" bttn - backend záležitosti
 * sizeování obrázků v košíku a dále 
