@@ -127,7 +127,28 @@ require_once "config.php";
                     </div>
                 </div>
                 <div class="col">
-                    <p></p>
+                    <p>
+                        <?php
+                            if(!isset($_GET["selectedCategory"])){
+                                $_GET["selectedCategory"] = " like '%'";
+                            }else{
+                                if($_GET["selectedCategory"][0] != " "){
+                                    $_GET["selectedCategory"] = "=" . $_GET["selectedCategory"];
+                                }
+                            }
+
+                            $sql = 'SELECT id FROM part WHERE category' . $_GET["selectedCategory"]. ';';
+                            if ($result = mysqli_query($link, $sql)) {
+                                $partsCount = mysqli_num_rows($result);
+                                mysqli_free_result($result);
+                            }
+
+                            $pagesCount = $partsCount < 40 ? 1 : (round($partsCount / 40, 0) + ($partsCount % 40 != 0 && $partsCount > 40 ? 1 : 0)); 
+
+                            echo "<b>" . $partsCount . "</b> položek, rozděleno na <b>" . $pagesCount . "</b> stránek, řazeno podle <b>" . "_" . "</b>
+                                    | V košíku <b>" . (isset($_SESSION["cart"]) ? sizeof($_SESSION["cart"]) : 0) . "</b> položek za <b>" . "" . " Kč</b>";
+                        ?>
+                    </p>
                 </div>
                 <div class="col">
                     <button type="button" class="btn btn-primary cartButton"><i class="bi bi-cart2"></i></button>
@@ -140,21 +161,7 @@ require_once "config.php";
                         return $selectedCategory[0] == "=" ? substr($selectedCategory, 1) : $selectedCategory;
                     }
 
-                    if(!isset($_GET["selectedCategory"])){
-                        $_GET["selectedCategory"] = " like '%'";
-                    }else{
-                        if($_GET["selectedCategory"][0] != " "){
-                            $_GET["selectedCategory"] = "=" . $_GET["selectedCategory"];
-                        }
-                    }
-
                     $openedPage = (!isset($_GET["openedPage"]) ? 1 : $_GET["openedPage"]);
-
-                    $sql = 'SELECT id FROM part WHERE category' . $_GET["selectedCategory"]. ';';
-                    if ($result = mysqli_query($link, $sql)) {
-                        $partsCount = mysqli_num_rows($result);
-                        mysqli_free_result($result);
-                    }
 
                     $sql = 'SELECT * FROM part WHERE category' . $_GET["selectedCategory"]. ' LIMIT 40 OFFSET ' . ($openedPage -1) * 40 . ';';
                     if ($result = mysqli_query($link, $sql)) {
@@ -189,7 +196,6 @@ require_once "config.php";
                                     <a class="page-link" href="?openedPage=' . ($openedPage - 1) . '&selectedCategory=' . RemoveEquals($_GET["selectedCategory"]) . '">Předchozí</a>
                                 </li>';
 
-                            $pagesCount = $partsCount < 40 ? 1 : (round($partsCount / 40, 0) + ($partsCount % 40 != 0 && $partsCount > 40 ? 1 : 0)); 
                             $paginationActive = ($openedPage == 1 ? 0 : ($openedPage == $pagesCount ? ($pagesCount > 2 ? -2 : -1) : -1));
                          
                             for($i = ($openedPage + $paginationActive); $i < $pagesCount + 1; $i++){
