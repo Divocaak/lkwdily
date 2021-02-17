@@ -31,11 +31,6 @@
 * dynamická velikost obrázků na kartě
 * stránkování
     * nechat uloženou kategorii i přes jiné číslo stránky
-
-
-## Probíhající
-
-* řazení, funkčnost
 * ovládací panel e-shopu
     1. řazení
         * dropdown
@@ -47,6 +42,10 @@
         * počet stránek
     3. košík button
         * ikonka místo textu
+
+
+## Probíhající
+
 
 
 ## To-do list
@@ -81,4 +80,13 @@
     }else {
     echo "Message could not be sent...";
     }
+    ```
+* načítání tabulky do databáze
+    * excel sheet uložit jako __txt oddeleny tabulatory__, kodovani __unicode utf-8__
+    ``` sql
+    LOAD DATA INFILE "C:/Users/Datart - Krakov/Desktop/part.txt" INTO TABLE part
+    FIELDS TERMINATED BY '\t'
+    LINES TERMINATED BY '\n'
+    IGNORE 1 LINES
+    (@col1, @col2, @col3, @col4, @col5, @col6, @col7, @col8) SET id=@col1, img_path=@col2, name=@col3, code=@col4, category=@col5, price=@col6, storage=@col8;
     ```
