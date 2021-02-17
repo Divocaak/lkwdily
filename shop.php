@@ -108,36 +108,66 @@ require_once "config.php";
         </div>
         <div class="col-9">
             <div class="row mt-1">
-                <div class="col">
+                <div class="col-2">
                     <div class="dropdown">
                         <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="sortByDropdown"
                             data-toggle="dropdown" aria-expanded="false">Seřadit podle</a>
                         <ul class="dropdown-menu" aria-labelledby="sortByDropdown">
-                            <li><a class="dropdown-item" href="#">Cena <i class="bi bi-caret-up-fill"></i></a></li>
-                            <li><a class="dropdown-item" href="#">Cena <i class="bi bi-caret-down-fill"></i></a></li>
-                            <li><a class="dropdown-item" href="#">Abecedně <i class="bi bi-caret-up-fill"></i></a></li>
-                            <li><a class="dropdown-item" href="#">Abecedně <i class="bi bi-caret-down-fill"></i></a>
+                            <li><a class="dropdown-item" href="?sortBy=0">Cena <i class="bi bi-caret-up-fill"></i></a></li>
+                            <li><a class="dropdown-item" href="?sortBy=1">Cena <i class="bi bi-caret-down-fill"></i></a></li>
+                            <li><a class="dropdown-item" href="?sortBy=2">Abecedně <i class="bi bi-caret-up-fill"></i></a></li>
+                            <li><a class="dropdown-item" href="?sortBy=3">Abecedně <i class="bi bi-caret-down-fill"></i></a>
                             </li>
-                            <li><a class="dropdown-item" href="#">Kód produktu <i class="bi bi-caret-up-fill"></i></a>
+                            <li><a class="dropdown-item" href="?sortBy=4">Kód produktu <i class="bi bi-caret-up-fill"></i></a>
                             </li>
-                            <li><a class="dropdown-item" href="#">Kód produktu <i class="bi bi-caret-down-fill"></i></a>
+                            <li><a class="dropdown-item" href="?sortBy=5">Kód produktu <i class="bi bi-caret-down-fill"></i></a>
                             </li>
-                            <li><a class="dropdown-item" href="#">Skladem</i></a></li>
+                            <li><a class="dropdown-item" href="?sortBy=6">Skladem</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-8">
                     <p>
                         <?php
-                            if(!isset($_GET["selectedCategory"])){
-                                $_GET["selectedCategory"] = " like '%'";
-                            }else{
-                                if($_GET["selectedCategory"][0] != " "){
-                                    $_GET["selectedCategory"] = "=" . $_GET["selectedCategory"];
-                                }
+                            $sqlSort = ["price ASC", "price DESC", "name ASC", "name DESC", "code ASC", "code DESC", "storage DESC"];
+                            $textSort = ['Cena <i class="bi bi-caret-up-fill"></i>',
+                            'Cena <i class="bi-caret-down-fill"></i>',
+                            'Abecedně <i class="bi-caret-up-fill"></i>',
+                            'Abecedně <i class="bi-caret-down-fill"></i>',
+                            'Kód produktu <i class="bi-caret-up-fill"></i>',
+                            'Kód produktu <i class="bi-caret-down-fill"></i>',
+                            'Skladem'];  
+
+                            if(!isset($_SESSION["sortBy"])){
+                                $_SESSION["sortBy"] = 2;
                             }
 
-                            $sql = 'SELECT id FROM part WHERE category' . $_GET["selectedCategory"]. ';';
+                            if(!isset($_SESSION["selectedCategory"])){
+                                $_SESSION["selectedCategory"] = " like '%'";
+                            }
+
+                            if(!isset($_SESSION["openedPage"])){
+                                $_SESSION["openedPage"] = 1;
+                            }
+
+                            if(isset($_GET["sortBy"])){
+                                $_SESSION["sortBy"] = intval($_GET["sortBy"]);
+                                $_SESSION["openedPage"] = 1;
+                            }
+
+                            if(isset($_GET["selectedCategory"])){
+                                if($_GET["selectedCategory"][0] != " "){
+                                    $_SESSION["selectedCategory"] = "=" . $_GET["selectedCategory"];
+                                }
+
+                                $_SESSION["openedPage"] = 1;
+                            }
+                            
+                            if(isset($_GET["openedPage"])){
+                                $_SESSION["openedPage"] = $_GET["openedPage"];
+                            }
+
+                            $sql = 'SELECT id FROM part WHERE category' . $_SESSION["selectedCategory"]. ';';
                             if ($result = mysqli_query($link, $sql)) {
                                 $partsCount = mysqli_num_rows($result);
                                 mysqli_free_result($result);
@@ -145,12 +175,13 @@ require_once "config.php";
 
                             $pagesCount = $partsCount < 40 ? 1 : (round($partsCount / 40, 0) + ($partsCount % 40 != 0 && $partsCount > 40 ? 1 : 0)); 
 
-                            echo "<b>" . $partsCount . "</b> položek, rozděleno na <b>" . $pagesCount . "</b> stránek, řazeno podle <b>" . "_" . "</b>
-                                    | V košíku <b>" . (isset($_SESSION["cart"]) ? sizeof($_SESSION["cart"]) : 0) . "</b> položek za <b>" . "" . " Kč</b>";
+                            echo "<b>" . $_SESSION["selectedCategory"] . "</b>: <b>" . $partsCount . "</b> položek, rozděleno na <b>" . $pagesCount . "</b> stránek,
+                                    řazeno podle <b>" . $textSort[$_SESSION["sortBy"]] . "</b> | 
+                                    V košíku <b>" . (isset($_SESSION["cart"]) ? sizeof($_SESSION["cart"]) : 0) . "</b> položek za <b>" . "" . " Kč</b>";
                         ?>
                     </p>
                 </div>
-                <div class="col">
+                <div class="col-2">
                     <button type="button" class="btn btn-primary cartButton"><i class="bi bi-cart2"></i></button>
                 </div>
             </div>
@@ -161,9 +192,8 @@ require_once "config.php";
                         return $selectedCategory[0] == "=" ? substr($selectedCategory, 1) : $selectedCategory;
                     }
 
-                    $openedPage = (!isset($_GET["openedPage"]) ? 1 : $_GET["openedPage"]);
 
-                    $sql = 'SELECT * FROM part WHERE category' . $_GET["selectedCategory"]. ' LIMIT 40 OFFSET ' . ($openedPage -1) * 40 . ';';
+                    $sql = 'SELECT * FROM part WHERE category' . $_SESSION["selectedCategory"]. 'ORDER BY ' . $sqlSort[$_SESSION["sortBy"]] . ' LIMIT 40 OFFSET ' . ($_SESSION["openedPage"] -1) * 40 . ';';
                     if ($result = mysqli_query($link, $sql)) {
                         while ($row = mysqli_fetch_row($result)) {
                         echo '<div class="col-3">
@@ -189,19 +219,19 @@ require_once "config.php";
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
                         <?php
-                            echo '<li class="page-item ' . ($openedPage == 1 ? "disabled" : "") . '">
-                                    <a class="page-link" href="?openedPage=1' . '&selectedCategory=' . RemoveEquals($_GET["selectedCategory"]) . '">První</a>
+                            echo '<li class="page-item ' . ($_SESSION["openedPage"] == 1 ? "disabled" : "") . '">
+                                    <a class="page-link" href="?openedPage=1">První</a>
                                 </li>';
-                            echo '<li class="page-item ' . ($openedPage == 1 ? "disabled" : "") . '">
-                                    <a class="page-link" href="?openedPage=' . ($openedPage - 1) . '&selectedCategory=' . RemoveEquals($_GET["selectedCategory"]) . '">Předchozí</a>
+                            echo '<li class="page-item ' . ($_SESSION["openedPage"] == 1 ? "disabled" : "") . '">
+                                    <a class="page-link" href="?openedPage=' . ($_SESSION["openedPage"] - 1) . '">Předchozí</a>
                                 </li>';
 
-                            $paginationActive = ($openedPage == 1 ? 0 : ($openedPage == $pagesCount ? ($pagesCount > 2 ? -2 : -1) : -1));
+                            $paginationActive = ($_SESSION["openedPage"] == 1 ? 0 : ($_SESSION["openedPage"] == $pagesCount ? ($pagesCount > 2 ? -2 : -1) : -1));
                          
-                            for($i = ($openedPage + $paginationActive); $i < $pagesCount + 1; $i++){
-                                if($i == ($openedPage - 1) || $i == $openedPage || $i == ($openedPage + 1)){
-                                    echo '<li class="page-item ' . ($openedPage == $i ? "active" : "") . '">
-                                    <a class="page-link" href="?openedPage=' . $i . '&selectedCategory=' . RemoveEquals($_GET["selectedCategory"]) . '">' . $i . '</a>
+                            for($i = ($_SESSION["openedPage"] + $paginationActive); $i < $pagesCount + 1; $i++){
+                                if($i == ($_SESSION["openedPage"] - 1) || $i == $_SESSION["openedPage"] || $i == ($_SESSION["openedPage"] + 1)){
+                                    echo '<li class="page-item ' . ($_SESSION["openedPage"] == $i ? "active" : "") . '">
+                                    <a class="page-link" href="?openedPage=' . $i . '">' . $i . '</a>
                                     </li>';
                                 }
                                 else{
@@ -209,14 +239,12 @@ require_once "config.php";
                                 }
                             }
 
-                            echo '<li class="page-item ' . ($openedPage == $pagesCount ? "disabled" : "") . '">
-                                    <a class="page-link" href="?openedPage=' . ($openedPage + 1) . '&selectedCategory=' . RemoveEquals($_GET["selectedCategory"]) . '">Další</a>
+                            echo '<li class="page-item ' . ($_SESSION["openedPage"] == $pagesCount ? "disabled" : "") . '">
+                                    <a class="page-link" href="?openedPage=' . ($_SESSION["openedPage"] + 1) . '">Další</a>
                                 </li>';
-                            echo '<li class="page-item ' . ($openedPage == $pagesCount ? "disabled" : "") . '">
-                                <a class="page-link" href="?openedPage=' . ($pagesCount - 1) . '&selectedCategory=' . RemoveEquals($_GET["selectedCategory"]) . '">Poslední</a>
+                            echo '<li class="page-item ' . ($_SESSION["openedPage"] == $pagesCount ? "disabled" : "") . '">
+                                <a class="page-link" href="?openedPage=' . ($pagesCount - 1) . '">Poslední</a>
                             </li>';
-
-                            echo "&nbsp;<b>" . $partsCount . "</b>&nbsp;položek,&nbsp;<b>" . $pagesCount . "</b>&nbsp;stránek.";
                         ?>
                     </ul>
                 </nav>
