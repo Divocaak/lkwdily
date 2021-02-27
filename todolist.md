@@ -48,8 +48,17 @@
 
 
 
+
 ## To-do list
 
+1. __Zadáno nové__
+
+* original čísla místo popisu produktu
+* kategorie všechny, krom: motorové díly, filtry, návěsy
+
+2. __Moje__
+
+* pod výrobcem je kategorie (checknout)? 
 * v detailu produktu je empty row nad kodem produktu, odstranit hover effect
 * "potvrdit objednávku" bttn - backend záležitosti
 * sizeování obrázků v košíku a dále 
