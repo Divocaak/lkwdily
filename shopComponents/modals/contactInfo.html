@@ -1,0 +1,120 @@
+<div class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartTitle">Fakturační údaje</h5>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                                <i class="bi bi-x"></i>
+                            </button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3 needs-validation" novalidate autocomplete="on">
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">Křestní jméno</label>
+                        <input type="text" class="form-control" autocomplete="given-name" id="validationCustom01" value="" required>
+                        <div class="valid-feedback">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom02" class="form-label">Příjmení</label>
+                        <input type="text" class="form-control" autocomplete="family-name" id="validationCustom02" value="" required>
+                        <div class="valid-feedback">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Město</label>
+                        <input type="text" class="form-control" autocomplete="address-level2" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Prosím, zadejte město.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">Země</label>
+                        <select class="form-select" id="validationCustom04" required>
+                                        <option selected disabled>Vybrat…</option>
+                                        <option value="CZ">Česká republika</option>
+                                        <option value="DE">Německo</option>
+                                        <option value="AU">Rakousko</option>
+                                    </select>
+                        <div class="invalid-feedback">
+                            Prosím, vyberte stát.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label">Ulice a č.p.</label>
+                        <input type="text" class="form-control" autocomplete="street-address" id="validationCustom05" required>
+                        <div class="invalid-feedback">
+                            Prosím, zadejte ulici a číslo popisné.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom06" class="form-label">PSČ</label>
+                        <input type="text" class="form-control" autocomplete="postal-code" id="validationCustom06" required>
+                        <div class="invalid-feedback">
+                            Prosím, zadejte platné PSČ.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                            Souhlasím se zpracováním osobních údajů a přečetl jsem si <a
+                                                href="terms.pdf" target="_blank">Obchodní podmínky</a>
+                                        </label>
+                            <div class="invalid-feedback">
+                                Pro pokračování prosím zaškrtněte.
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="deliveryAddress" value="">
+                            <label class="form-check-label" for="deliveryAddress">
+                                            Jiná dodací adresa, než je adresa fakturační
+                                        </label>
+                        </div>
+                    </div>
+                </form>
+                <form class="row g-3 needs-validation" id="deliveryAddressForm" novalidate autocomplete="on">
+                    <div class="col-md-6">
+                        <label for="validationCustom07" class="form-label">Město</label>
+                        <input type="text" class="form-control" autocomplete="address-level2" id="validationCustom07" required>
+                        <div class="invalid-feedback">
+                            Prosím, zadejte město.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom08" class="form-label">Země</label>
+                        <select class="form-select" id="validationCustom08" required>
+                                        <option selected disabled>Vybrat…</option>
+                                        <option value="CZ">Česká republika</option>
+                                        <option value="DE">Německo</option>
+                                        <option value="AU">Rakousko</option>
+                                    </select>
+                        <div class="invalid-feedback">
+                            Prosím, vyberte stát.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom09" class="form-label">Ulice a č.p.</label>
+                        <input type="text" class="form-control" autocomplete="street-address" id="validationCustom09" required>
+                        <div class="invalid-feedback">
+                            Prosím, zadejte ulici a číslo popisné.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom10" class="form-label">PSČ</label>
+                        <input type="text" class="form-control" autocomplete="postal-code" id="validationCustom10" required>
+                        <div class="invalid-feedback">
+                            Prosím, zadejte platné PSČ.
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="submitContactForm">Pokračovat k
+                                platbě</button>
+            </div>
+        </div>
+    </div>
+</div>

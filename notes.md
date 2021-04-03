@@ -10,21 +10,32 @@
 
 1. __Zadáno nové__
 
-    - [] original čísla místo popisu produktu
-    - [] kategorie všechny, krom: motorové díly, filtry, návěsy
+    - [x] original čísla místo popisu produktu
+    - [x] kategorie všechny, krom: motorové díly, filtry, návěsy
+    - [ ] vyhledávání podle jména a original čísla
 
 2. __Moje__
 
-    - [ ] pod výrobcem je kategorie (checknout)? 
-    - [ ] v detailu produktu je empty row nad kodem produktu, odstranit hover effect
-    - [ ] "potvrdit objednávku" bttn - backend záležitosti
+    - [ ] kategorie
+        - [x] databáze
+        - [x] seznam na stránce
+        - [ ] zobrazování
+    - [x] v detailu produktu je empty row nad kodem produktu, odstranit hover effect
+    - [ ] upravit vypisování zobrazená kategorie v controll panelu
     - [ ] sizeování obrázků v košíku a dále 
     - [ ] typografická úprava obchodních podmínek
     - [ ] ikonky
-    - [ ] barvy tlačítek
-    - [ ] rozsložkovat soubory
+    - [ ] organizace a přehlednost
+        - [ ] rozsložkovat soubory
+        - [ ] include page.php
+    - [ ] "potvrdit objednávku" bttn - backend záležitosti
     - [ ] napsat si sem do notes.md nějaká úvodní slova do hlavičky
 
+3. __Na schůzce__
+
+    - [ ] zobrazovat výrobce a značku?
+        - [ ] pod výrobcem je kategorie (checknout)? 
+    - [ ] barvy
 
 
 ## Předvedeno
@@ -66,11 +77,98 @@
     - [x] email do registrace
 
 
+## Kategorie
+
+("Home"),
+("Všechny produkty"),
+    ("Karosářské díly"),
+        ("DAF"),
+            ("XF 106"),
+                ("Karosářské díly"),
+                ("Elektroinstalační dí­ly"),
+                ("Doplňky"),
+            ("XF 105"),
+            ("XF 95"),
+            ("CF"),
+            ("CF 6"),
+            ("LF 45/55"),
+            ("LF 6"),
+        ("Iveco"),
+            ("Stralis Hi-Way"),
+            ("Stralis"),
+            ("New EuroCargo"),
+            ("Daily UniJet"),
+            ("Eurotech"),
+            ("EuroTrakker"),
+            ("EuroCargo"),
+            ("Daily 2006, 2014"),
+            ("Eurostar"),
+        ("MAN"),
+            ("TGX Euro 6"),
+            ("TGA"),
+            ("TGX"),
+            ("TGL Euro 6"),
+            ("TGL"),
+            ("TGS"),
+            ("F2000"),
+            ("L2000"),
+        ("Mercedes Benz"),
+            ("Actros I"),
+            ("Actros II"),
+            ("Actros III"),
+            ("Actros IV"),
+            ("Atego Euro 6"),
+            ("Atego"),
+            ("Axor"),
+            ("LN"),
+        ("Renault"),
+            ("New Premium"),
+            ("Premium"),
+            ("Magnum"),
+            ("Midlum"),
+            ("Master 3 2010"),
+            ("Range T Euro 6"),
+        ("Scania"),
+            ("4"),
+            ("R"),
+            ("R 2010"),
+        ("Volvo"),
+            ("FH"),
+            ("FH 3"),
+            ("FH 4"),
+            ("FM"),
+            ("FE, FL"),
+    ("Osvětlení"),
+        ("Hlavní světlomety"),
+        ("Koncová světla"),
+        ("Přídavné světlomety"),
+        ("Směrová světla"),
+        ("Poziční světla"),
+        ("Osvětlení SPZ"),
+        ("Výstražné majáky"),
+        ("Žárovky"),
+    ("Brzdové segmenty"),
+        ("Brzdové desky"),
+        ("Brzdové kotouče"),
+    ("Autokosmetika"),
+    ("Autobaterie"),
+    ("Elektroinstalace"),
+    ("Použité náhradní díly"),
+    ("Příslušenství"),
+    ("Sněhové řetězy"),
+    ("Výprodej skladových zásob"),
+    ("Nezařazené"),
+    
 
 ## Připnuté
 
 * `APSI` účetní sys. p. Kotek __+420777160206__
 * `Pevaro` David __+420730173311__
+* kategorie a jejich počet
+    ``` sql
+    SELECT category, COUNT(*) FROM part GROUP BY category;
+    ```
+
 * možná funkční odesílání mailu:
     ``` php
     ini_set("SMTP", "aspmx.l.google.com");
@@ -90,6 +188,7 @@
     echo "Message could not be sent...";
     }
     ```
+
 * načítání tabulky do databáze
     * excel sheet uložit jako __txt oddeleny tabulatory__, kodovani __unicode utf-8__
 

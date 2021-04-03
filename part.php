@@ -10,7 +10,7 @@ $returnArr = [];
 if ($result = mysqli_query($link, $sql)) {
     while ($row = mysqli_fetch_row($result)) {
          $returnArr = ["name" => $row[1], "price" => $row[2], "manufacturer" => $row[9],"brand" => $row[11],
-            "storage" => $row[5], "text_small" => $row[6], "img_path" => $row[7], "code" => $row[8]];
+            "storage" => $row[5], "img_path" => $row[6], "code" => $row[7]];
     }
     mysqli_free_result($result);
 }

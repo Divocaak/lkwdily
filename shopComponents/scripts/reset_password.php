@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: ../../login.php");
     exit;
 }
  
@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(mysqli_stmt_execute($stmt)){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
-                header("location: login.php");
+                header("location: ../../login.php");
                 exit();
             } else{
                 echo "Něco se nepovedlo, zkuste to prosím později.";
@@ -100,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Změnit heslo">
-                <a class="btn btn-link" href="shop.php">Zrušit</a>
+                <a class="btn btn-link" href="../../shop.php">Zrušit</a>
             </div>
         </form>
     </div>

@@ -54,7 +54,7 @@ $(document).ready(function() {
                     response.storage + "</b> ks" : "<b>Není skladem</b>"
                 );
 
-                $('#text_small').html(response.text_small);
+                $('#code').html(response.code);
             },
             complete: function() {
                 $('.partLoaded').show(1000);
