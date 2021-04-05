@@ -1,1 +1,1 @@
-select count(*) from part GROUP BY category;
+select id, name from category;

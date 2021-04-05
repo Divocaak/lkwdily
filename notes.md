@@ -16,18 +16,18 @@
 
 2. __Moje__
 
-    - [ ] kategorie
+    - [x] kategorie
         - [x] databáze
         - [x] seznam na stránce
-        - [ ] zobrazování
+        - [x] zobrazování
     - [x] v detailu produktu je empty row nad kodem produktu, odstranit hover effect
-    - [ ] upravit vypisování zobrazená kategorie v controll panelu
+    - [x] upravit vypisování zobrazené kategorie v controll panelu
     - [ ] sizeování obrázků v košíku a dále 
     - [ ] typografická úprava obchodních podmínek
     - [ ] ikonky
-    - [ ] organizace a přehlednost
-        - [ ] rozsložkovat soubory
-        - [ ] include page.php
+    - [x] organizace a přehlednost
+        - [x] rozsložkovat soubory
+        - [x] include page.php
     - [ ] "potvrdit objednávku" bttn - backend záležitosti
     - [ ] napsat si sem do notes.md nějaká úvodní slova do hlavičky
 
@@ -36,6 +36,7 @@
     - [ ] zobrazovat výrobce a značku?
         - [ ] pod výrobcem je kategorie (checknout)? 
     - [ ] barvy
+
 
 
 ## Předvedeno
@@ -77,97 +78,95 @@
     - [x] email do registrace
 
 
+
 ## Kategorie
 
-("Home"),
-("Všechny produkty"),
-    ("Karosářské díly"),
-        ("DAF"),
-            ("XF 106"),
-                ("Karosářské díly"),
-                ("Elektroinstalační dí­ly"),
-                ("Doplňky"),
-            ("XF 105"),
-            ("XF 95"),
-            ("CF"),
-            ("CF 6"),
-            ("LF 45/55"),
-            ("LF 6"),
-        ("Iveco"),
-            ("Stralis Hi-Way"),
-            ("Stralis"),
-            ("New EuroCargo"),
-            ("Daily UniJet"),
-            ("Eurotech"),
-            ("EuroTrakker"),
-            ("EuroCargo"),
-            ("Daily 2006, 2014"),
-            ("Eurostar"),
-        ("MAN"),
-            ("TGX Euro 6"),
-            ("TGA"),
-            ("TGX"),
-            ("TGL Euro 6"),
-            ("TGL"),
-            ("TGS"),
-            ("F2000"),
-            ("L2000"),
-        ("Mercedes Benz"),
-            ("Actros I"),
-            ("Actros II"),
-            ("Actros III"),
-            ("Actros IV"),
-            ("Atego Euro 6"),
-            ("Atego"),
-            ("Axor"),
-            ("LN"),
-        ("Renault"),
-            ("New Premium"),
-            ("Premium"),
-            ("Magnum"),
-            ("Midlum"),
-            ("Master 3 2010"),
-            ("Range T Euro 6"),
-        ("Scania"),
-            ("4"),
-            ("R"),
-            ("R 2010"),
-        ("Volvo"),
-            ("FH"),
-            ("FH 3"),
-            ("FH 4"),
-            ("FM"),
-            ("FE, FL"),
-    ("Osvětlení"),
-        ("Hlavní světlomety"),
-        ("Koncová světla"),
-        ("Přídavné světlomety"),
-        ("Směrová světla"),
-        ("Poziční světla"),
-        ("Osvětlení SPZ"),
-        ("Výstražné majáky"),
-        ("Žárovky"),
-    ("Brzdové segmenty"),
-        ("Brzdové desky"),
-        ("Brzdové kotouče"),
-    ("Autokosmetika"),
-    ("Autobaterie"),
-    ("Elektroinstalace"),
-    ("Použité náhradní díly"),
-    ("Příslušenství"),
-    ("Sněhové řetězy"),
-    ("Výprodej skladových zásob"),
-    ("Nezařazené"),
-    
+**85** ("Home"),
+**like %** ("Všechny produkty"),
+    **86** ("Karosářské díly"),
+        **87** ("DAF"),
+            **88** ("XF 106"),
+                **89** ("Karosářské díly"),
+                **90** ("Elektroinstalační dí­ly"),
+                **91** ("Doplňky"),
+            **92** ("XF 105"),
+            **93** ("XF 95"),
+            **94** ("CF"),
+            **95** ("CF 6"),
+            **96** ("LF 45/55"),
+            **97** ("LF 6"),
+        **98** ("Iveco"),
+            **99** ("Stralis Hi-Way"),
+            **100** ("Stralis"),
+            **101** ("New EuroCargo"),
+            **102** ("Daily UniJet"),
+            **103** ("Eurotech"),
+            **104** ("EuroTrakker"),
+            **105** ("EuroCargo"),
+            **106** ("Daily 2006, 2014"),
+            **107** ("Eurostar"),
+        **108** ("MAN"),
+            **109** ("TGX Euro 6"),
+            **110** ("TGA"),
+            **111** ("TGX"),
+            **112** ("TGL Euro 6"),
+            **113** ("TGL"),
+            **114** ("TGS"),
+            **115** ("F2000"),
+            **116** ("L2000"),
+        **117** ("Mercedes Benz"),
+            **118** ("Actros I"),
+            **119** ("Actros II"),
+            **120** ("Actros III"),
+            **121** ("Actros IV"),
+            **122** ("Atego Euro 6"),
+            **123** ("Atego"),
+            **124** ("Axor"),
+            **125** ("LN"),
+        **126** ("Renault"),
+            **127** ("New Premium"),
+            **128** ("Premium"),
+            **129** ("Magnum"),
+            **130** ("Midlum"),
+            **131** ("Master 3 2010"),
+            **132** ("Range T Euro 6"),
+        **133** ("Scania"),
+            **134** ("4"),
+            **135** ("R"),
+            **136** ("R 2010"),
+        **137** ("Volvo"),
+            **138**("FH"),
+            **139** ("FH 3"),
+            **140** ("FH 4"),
+            **141** ("FM"),
+            **142** ("FE, FL"),
+    **143** ("Osvětlení"),
+        **144** ("Hlavní světlomety"),
+        **145** ("Koncová světla"),
+        **146** ("Přídavné světlomety"),
+        **147** ("Směrová světla"),
+        **148** ("Poziční světla"),
+        **149** ("Osvětlení SPZ"),
+        **150** ("Výstražné majáky"),
+        **151** ("Žárovky"),
+    **152** ("Brzdové segmenty"),
+        **153** ("Brzdové desky"),
+        **154** ("Brzdové kotouče"),
+    **155** ("Autokosmetika"),
+    **156** ("Autobaterie"),
+    **157** ("Elektroinstalace"),
+    **158** ("Použité náhradní díly"),
+    **159** ("Příslušenství"),
+    **160** ("Sněhové řetězy"),
+    **161** ("Výprodej skladových zásob"),
+    **162** ("Nezařazené"),
+
+
 
 ## Připnuté
 
 * `APSI` účetní sys. p. Kotek __+420777160206__
 * `Pevaro` David __+420730173311__
-* kategorie a jejich počet
-    ``` sql
-    SELECT category, COUNT(*) FROM part GROUP BY category;
-    ```
 
 * možná funkční odesílání mailu:
     ``` php

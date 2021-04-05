@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["discount"] = $discount;
                             
                             // Redirect user to welcome page
-                            header("location: shop.php");
+                            header("location: shop.php?selectedCategory= like %");
                         } else{
                             echo $password . ' ' . $hashed_password;
                             // Display an error message if password is not valid
