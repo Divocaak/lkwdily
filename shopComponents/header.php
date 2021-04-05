@@ -20,9 +20,15 @@
             </ul>
         </div>
     </div>
-    <div class="col-2">
+    <div class="container col-2">
+        <div class="input-group" id="searchInputField">
+            <input type="text" class="form-control sm-2" placeholder="Orig. číslo, název">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="searchItemsButton"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
     </div>
-    <div class="col-8">
+    <div class="col-7">
         <p>
             <?php
                 $sqlSort = ["price ASC", "price DESC", "name ASC", "name DESC", "code ASC", "code DESC", "storage DESC"];
@@ -67,7 +73,7 @@
                 ?>
         </p>
     </div>
-    <div class="col-2">
+    <div class="col-1">
         <button type="button" class="btn btn-primary cartButton"><i class="bi bi-cart2"></i></button>
     </div>
 </div>
@@ -116,7 +122,7 @@
                 return $textAllCategories[intval($_GET["selectedCategory"])];
             }
             else if($_GET["selectedCategory"] == 85){
-                $_SESSION["selectedCategory"] = "85";
+                $_SESSION["selectedCategory"] = "=85";
                 return "Domů";
             }
             else

@@ -1,1 +1,1 @@
-select id, name from category;
+SELECT * FROM part WHERE category=85 AND (name LIKE '%a%' OR code LIKE '%a%');

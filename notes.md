@@ -16,6 +16,10 @@
 
 2. __Moje__
 
+    - [ ] pokud vyhledávám
+        - [ ] zůstaň v kategorii
+        - [ ] vyhledávaný string vpiš do inoutfieldu
+    - [x] MAJOR BUG V ROZKLIKÁVÁNÍ ITEMU
     - [x] kategorie
         - [x] databáze
         - [x] seznam na stránce

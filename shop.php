@@ -26,6 +26,15 @@ require_once "shopComponents/scripts/config.php";
 </head>
 
 <body>
+    <?php
+        include("shopComponents/modals/part.html");
+        include("shopComponents/modals/cart/cart.html");
+        include("shopComponents/modals/cart/cartEmpty.html");
+        include("shopComponents/modals/orderOverview.html");
+        include("shopComponents/modals/contactInfo.html");
+        include("shopComponents/modals/payment.html");
+    ?>
+
     <div class="row">
         <div class="col-3">
             <?php include("shopComponents/navbar.php");?>
@@ -39,7 +48,10 @@ require_once "shopComponents/scripts/config.php";
                         return $selectedCategory[0] == "=" ? substr($selectedCategory, 1) : $selectedCategory;
                     }
 
-                    $sql = 'SELECT * FROM part WHERE category' . $_SESSION["selectedCategory"]. ' ORDER BY ' . $sqlSort[$_SESSION["sortBy"]] . ' LIMIT 40 OFFSET ' . ($_SESSION["openedPage"] -1) * 40 . ';';
+                    $sql = 'SELECT * FROM part WHERE category' . $_SESSION["selectedCategory"] . searchItems() . '
+                        ORDER BY ' . $sqlSort[$_SESSION["sortBy"]] . '
+                        LIMIT 40 OFFSET ' . ($_SESSION["openedPage"] -1) * 40 . ';';
+                        echo $sql;
                     if ($result = mysqli_query($link, $sql)) {
                         while ($row = mysqli_fetch_row($result)) {
                         echo '<div class="col-3">
@@ -60,19 +72,21 @@ require_once "shopComponents/scripts/config.php";
                         mysqli_free_result($result);
                     }
                     mysqli_close($link);
+
+                    function searchItems(){
+                        if(isset($_SESSION["searchText"]) && $_SESSION["searchText"] != ""){
+                            return ' AND (name LIKE "%' . $_SESSION["searchText"] . '%"
+                            OR code LIKE "%' . $_SESSION["searchText"] . '%")';
+                        }
+                        else
+                        {
+                            return "";
+                        }
+                    }
                 ?>
 
                 <?php include("shopComponents/pagination.php");?>
             </div>
-            
-            <?php
-                include("shopComponents/modals/part.html");
-                include("shopComponents/modals/cart/cart.html");
-                include("shopComponents/modals/cart/cartEmpty.html");
-                include("shopComponents/modals/orderOverview.html");
-                include("shopComponents/modals/contactInfo.html");
-                include("shopComponents/modals/payment.html");
-            ?>
 
             <div class="row">
                 <div class="col">
