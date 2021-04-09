@@ -10,20 +10,36 @@
 
 1. __Zadáno nové__
 
-    - [] original čísla místo popisu produktu
-    - [] kategorie všechny, krom: motorové díly, filtry, návěsy
+    - [x] original čísla místo popisu produktu
+    - [x] kategorie všechny, krom: motorové díly, filtry, návěsy
+    - [ ] vyhledávání podle jména a original čísla
 
 2. __Moje__
 
-    - [ ] pod výrobcem je kategorie (checknout)? 
-    - [ ] v detailu produktu je empty row nad kodem produktu, odstranit hover effect
-    - [ ] "potvrdit objednávku" bttn - backend záležitosti
+    - [ ] pokud vyhledávám
+        - [ ] zůstaň v kategorii
+        - [ ] vyhledávaný string vpiš do inoutfieldu
+    - [x] MAJOR BUG V ROZKLIKÁVÁNÍ ITEMU
+    - [x] kategorie
+        - [x] databáze
+        - [x] seznam na stránce
+        - [x] zobrazování
+    - [x] v detailu produktu je empty row nad kodem produktu, odstranit hover effect
+    - [x] upravit vypisování zobrazené kategorie v controll panelu
     - [ ] sizeování obrázků v košíku a dále 
     - [ ] typografická úprava obchodních podmínek
     - [ ] ikonky
-    - [ ] barvy tlačítek
-    - [ ] rozsložkovat soubory
+    - [x] organizace a přehlednost
+        - [x] rozsložkovat soubory
+        - [x] include page.php
+    - [ ] "potvrdit objednávku" bttn - backend záležitosti
     - [ ] napsat si sem do notes.md nějaká úvodní slova do hlavičky
+
+3. __Na schůzce__
+
+    - [ ] zobrazovat výrobce a značku?
+        - [ ] pod výrobcem je kategorie (checknout)? 
+    - [ ] barvy
 
 
 
@@ -67,10 +83,95 @@
 
 
 
+## Kategorie
+
+**85** ("Home"),
+**like %** ("Všechny produkty"),
+    **86** ("Karosářské díly"),
+        **87** ("DAF"),
+            **88** ("XF 106"),
+                **89** ("Karosářské díly"),
+                **90** ("Elektroinstalační dí­ly"),
+                **91** ("Doplňky"),
+            **92** ("XF 105"),
+            **93** ("XF 95"),
+            **94** ("CF"),
+            **95** ("CF 6"),
+            **96** ("LF 45/55"),
+            **97** ("LF 6"),
+        **98** ("Iveco"),
+            **99** ("Stralis Hi-Way"),
+            **100** ("Stralis"),
+            **101** ("New EuroCargo"),
+            **102** ("Daily UniJet"),
+            **103** ("Eurotech"),
+            **104** ("EuroTrakker"),
+            **105** ("EuroCargo"),
+            **106** ("Daily 2006, 2014"),
+            **107** ("Eurostar"),
+        **108** ("MAN"),
+            **109** ("TGX Euro 6"),
+            **110** ("TGA"),
+            **111** ("TGX"),
+            **112** ("TGL Euro 6"),
+            **113** ("TGL"),
+            **114** ("TGS"),
+            **115** ("F2000"),
+            **116** ("L2000"),
+        **117** ("Mercedes Benz"),
+            **118** ("Actros I"),
+            **119** ("Actros II"),
+            **120** ("Actros III"),
+            **121** ("Actros IV"),
+            **122** ("Atego Euro 6"),
+            **123** ("Atego"),
+            **124** ("Axor"),
+            **125** ("LN"),
+        **126** ("Renault"),
+            **127** ("New Premium"),
+            **128** ("Premium"),
+            **129** ("Magnum"),
+            **130** ("Midlum"),
+            **131** ("Master 3 2010"),
+            **132** ("Range T Euro 6"),
+        **133** ("Scania"),
+            **134** ("4"),
+            **135** ("R"),
+            **136** ("R 2010"),
+        **137** ("Volvo"),
+            **138**("FH"),
+            **139** ("FH 3"),
+            **140** ("FH 4"),
+            **141** ("FM"),
+            **142** ("FE, FL"),
+    **143** ("Osvětlení"),
+        **144** ("Hlavní světlomety"),
+        **145** ("Koncová světla"),
+        **146** ("Přídavné světlomety"),
+        **147** ("Směrová světla"),
+        **148** ("Poziční světla"),
+        **149** ("Osvětlení SPZ"),
+        **150** ("Výstražné majáky"),
+        **151** ("Žárovky"),
+    **152** ("Brzdové segmenty"),
+        **153** ("Brzdové desky"),
+        **154** ("Brzdové kotouče"),
+    **155** ("Autokosmetika"),
+    **156** ("Autobaterie"),
+    **157** ("Elektroinstalace"),
+    **158** ("Použité náhradní díly"),
+    **159** ("Příslušenství"),
+    **160** ("Sněhové řetězy"),
+    **161** ("Výprodej skladových zásob"),
+    **162** ("Nezařazené"),
+
+
+
 ## Připnuté
 
 * `APSI` účetní sys. p. Kotek __+420777160206__
 * `Pevaro` David __+420730173311__
+
 * možná funkční odesílání mailu:
     ``` php
     ini_set("SMTP", "aspmx.l.google.com");
@@ -90,6 +191,7 @@
     echo "Message could not be sent...";
     }
     ```
+
 * načítání tabulky do databáze
     * excel sheet uložit jako __txt oddeleny tabulatory__, kodovani __unicode utf-8__
 

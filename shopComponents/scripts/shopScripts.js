@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     $('#testButton').click(function() {
         $.ajax({
-            url: 'testScript.php',
+            url: 'shopComponents/scripts/testScript.php',
             type: 'post',
             success: function(response) {
                 $('#testP').html(response);
@@ -15,7 +15,7 @@ $(document).ready(function() {
         $('#paymentModal').modal("show");
 
         $.ajax({
-            url: 'writeCart.php',
+            url: 'shopComponents/scripts/writeCart.php',
             type: 'post',
             success: function(response) {
                 $('#cartP').html(response);
@@ -25,6 +25,7 @@ $(document).ready(function() {
 
     $('body').on('click', '.partButton', function() {
         partid = $(this).data("part-id");
+
         $('#partModal').modal('show');
 
         $('#ammount').popover('hide');
@@ -32,7 +33,7 @@ $(document).ready(function() {
         $('#partLoading *').show();
 
         $.ajax({
-            url: 'part.php',
+            url: 'shopComponents/scripts/part.php',
             type: 'post',
             data: {
                 id: partid
@@ -54,7 +55,7 @@ $(document).ready(function() {
                     response.storage + "</b> ks" : "<b>Není skladem</b>"
                 );
 
-                $('#text_small').html(response.text_small);
+                $('#code').html(response.code);
             },
             complete: function() {
                 $('.partLoaded').show(1000);
@@ -73,7 +74,7 @@ $(document).ready(function() {
             $('#ammount').popover('show');
         } else {
             $.ajax({
-                url: 'addToCart.php',
+                url: 'shopComponents/scripts/addToCart.php',
                 type: 'post',
                 data: {
                     id: partid,
@@ -93,7 +94,7 @@ $(document).ready(function() {
     $('body').on('click', '.removeButton', function() {
         var index = $(this).data("array-index");
         $.ajax({
-            url: 'removeFromCart.php',
+            url: 'shopComponents/scripts/removeFromCart.php',
             type: 'post',
             data: {
                 index: index
@@ -111,7 +112,7 @@ $(document).ready(function() {
         $('#orderOverviewLoading *').show();
 
         $.ajax({
-            url: 'cart.php',
+            url: 'shopComponents/scripts/cart.php',
             type: 'post',
             success: function(response) {
                 var text = "";
@@ -182,6 +183,20 @@ $(document).ready(function() {
             $('#deliveryAddressForm').hide(500);
         }
     });
+
+    $('#searchItemsButton').click(function() {
+        var findText = $('#searchInputField input').val().trim();
+        $.ajax({
+            url: 'shopComponents/scripts/searchItems.php',
+            type: 'post',
+            data: {
+                findText: findText
+            },
+            success: function(response) {
+                location.reload();
+            }
+        });
+    });
 });
 
 function UpdateValidationClasses(object, valid) {
@@ -207,7 +222,7 @@ function UpdateValidationClasses(object, valid) {
 function ReturnSessionVar(varToReturn) {
     var result;
     $.ajax({
-        url: "returnSessionVars.php",
+        url: "shopComponents/scripts/returnSessionVars.php",
         type: "post",
         async: false,
         success: function(response) {
@@ -234,7 +249,7 @@ function WriteCartContent() {
         $('#cartLoading *').show();
 
         $.ajax({
-            url: 'cart.php',
+            url: 'shopComponents/scripts/cart.php',
             type: 'post',
             success: function(response) {
                 var text = "";

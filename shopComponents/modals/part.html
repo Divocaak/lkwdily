@@ -1,0 +1,83 @@
+<div class="modal fade" id="partModal" tabindex="-1" role="dialog" aria-labelledby="partModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title partLoaded" id="partModalTitle"></h5>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                                <i class="bi bi-x"></i>
+                            </button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex justify-content-center" id="partLoading">
+                    <div class="spinner-grow" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+                <div class="row partLoaded">
+                    <div class="col">
+                        <img src="" id="partImg" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <table class="table table-sm table-borderless table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">&nbsp;</th>
+                                    <th scope="col">bez DPH</th>
+                                    <th scope="col">s DPH</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Běžná cena</th>
+                                    <td id="priceNormalWithout"></td>
+                                    <td id="priceNormalWith"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Vaše cena</th>
+                                    <td id="priceWithout"></td>
+                                    <td id="priceWith"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm table-borderless table-hover">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Výrobce</th>
+                                    <td id="manufacturer"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Značka</th>
+                                    <td id="brand"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm table-borderless table-hover">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Kód produktu</th>
+                                    <td id="code"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row partLoaded">
+                    <div class="col">
+                        <p id="storage"></p>
+                    </div>
+                    <div class="col">
+                        <input type="number" id="ammount" min="1" class="form-control" placeholder="Počet" aria-label="ammount" data-toggle="popover" title="Upozornění" data-placement="top" data-content="Počet musí být větší než 0">
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" id="add-to-cart-btn">Koupit</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-secondary cartButton" data-dismiss="modal">Košík</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

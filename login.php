@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
  
 // Include config file
-require_once "config.php";
+require_once "shopComponents/scripts/config.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["discount"] = $discount;
                             
                             // Redirect user to welcome page
-                            header("location: shop.php");
+                            header("location: shop.php?selectedCategory= like %");
                         } else{
                             echo $password . ' ' . $hashed_password;
                             // Display an error message if password is not valid
