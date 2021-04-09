@@ -1,6 +1,6 @@
-<nav class="navbar bg-light">
-    <ul class="nav flex-column">
-        <li class="nav-item" style="text-align: center;">
+<nav class="navbar bg-light h-100">
+    <ul class="nav fixed-top flex-column">
+        <li class="nav-item">
             <p>Přihlášen uživatel <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</p>
         </li>
         <div class="row justify-content-md-right" style="padding-left: 25px;">

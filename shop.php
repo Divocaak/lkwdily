@@ -23,6 +23,12 @@ require_once "shopComponents/scripts/config.php";
     <script src="shopComponents/scripts/shopScripts.js"></script>
 
     <title>E-shop</title>
+
+    <style>
+        .categoryChange, .sortOption, .page-link {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,68 +41,80 @@ require_once "shopComponents/scripts/config.php";
         include("shopComponents/modals/payment.html");
     ?>
 
-    <div class="row">
-        <div class="col-3">
-            <?php include("shopComponents/navbar.php");?>
+<div class="row">
+    <div class="col-md-3 mh-100 col-xs-2">
+        <?php include("shopComponents/navbar.php");?>
+    </div>
+    <div class="col-md-9 col-xs-10">
+        <div class="d-flex align-items-center justify-content-center" id="shopLoading">
+            </br></br></br>
+            <div class="spinner-grow" role="status">
+                <span class="sr-only"></span>
+            </div>
         </div>
-        <div class="col-9">
-            <?php include("shopComponents/header.php");?>
-            <div class="row">
-                <?php
-                    function RemoveEquals($selectedCategory)
-                    {
-                        return $selectedCategory[0] == "=" ? substr($selectedCategory, 1) : $selectedCategory;
-                    }
+        <div class="row" id="shopBody">
+            <?php
+                if(!isset($_SESSION["selectedCategoryName"]) || !isset($_SESSION["selectedCategorySql"])){
+                    $_SESSION["selectedCategorySql"] = " BETWEEN 86 AND 142";
+                    $_SESSION["selectedCategoryName"] = "Všechny produkty";
+                }
 
-                    $sql = 'SELECT * FROM part WHERE category' . $_SESSION["selectedCategory"] . searchItems() . '
-                        ORDER BY ' . $sqlSort[$_SESSION["sortBy"]] . '
-                        LIMIT 40 OFFSET ' . ($_SESSION["openedPage"] -1) * 40 . ';';
-                        echo $sql;
-                    if ($result = mysqli_query($link, $sql)) {
+                if(!isset($_SESSION["selectedSortName"]) || !isset($_SESSION["selectedSortSql"])){
+                    $_SESSION["selectedSortName"] = 2;
+                    $_SESSION["selectedSortSql"] = 2;
+                }
+                    
+                if(!isset($_SESSION["openedPage"])){
+                    $_SESSION["openedPage"] = 1;
+                }
+
+                include("shopComponents/header.php");
+
+                $sql = 'SELECT * FROM part WHERE category' . $_SESSION["selectedCategorySql"] . searchItems() . '
+                    ORDER BY ' . $_SESSION["selectedSortSql"] . '
+                    LIMIT 40 OFFSET ' . ($_SESSION["openedPage"] -1) * 40 . ';';
+
+                //echo $sql;
+
+                if ($result = mysqli_query($link, $sql)) {
+                    if(mysqli_num_rows($result) > 0){
                         while ($row = mysqli_fetch_row($result)) {
-                        echo '<div class="col-3">
-                                    <div class="card my-2">
-                                    <div class="card-img-top">
-                                        <img class="img-fluid d-block mx-auto" style="max-height: 200px;" src="' . $row[6] . '" alt="Card image cap">
-                                    </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $row[1] . '</h5>
-                                            <p class="card-text">Kód produktu: ' . $row[7] . '</p>
-                                            <button type="button" class="btn btn-primary partButton" data-part-id="' . $row[0] . '">
-                                                Zobrazit detail
-                                            </button>
+                            echo '<div class="col-xs-12 col-lg-3 col-md-6">
+                                        <div class="card my-2">
+                                            <div class="card-img-top">
+                                                <img class="img-fluid d-block mx-auto" style="max-height: 200px;" src="' . $row[6] . '" alt="Card image cap">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">' . $row[1] . '</h5>
+                                                <p class="card-text">Kód produktu: ' . $row[7] . '</p>
+                                                <button type="button" class="btn btn-primary partButton" data-part-id="' . $row[0] . '">
+                                                    Zobrazit detail
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>';
-                        }
-                        mysqli_free_result($result);
-                    }
-                    mysqli_close($link);
-
-                    function searchItems(){
-                        if(isset($_SESSION["searchText"]) && $_SESSION["searchText"] != ""){
-                            return ' AND (name LIKE "%' . $_SESSION["searchText"] . '%"
-                            OR code LIKE "%' . $_SESSION["searchText"] . '%")';
-                        }
-                        else
-                        {
-                            return "";
+                                    </div>';
                         }
                     }
-                ?>
+                    else{
+                        echo "<br><br><p class='text-center'><b>" . $_SESSION["searchText"] . "</b>: žádná shoda</p><br><br>";
+                    }
+                    mysqli_free_result($result);
+                }
+                mysqli_close($link);
 
-                <?php include("shopComponents/pagination.php");?>
-            </div>
+                function searchItems(){
+                    if(isset($_SESSION["searchText"]) && $_SESSION["searchText"] != ""){
+                        return ' AND (name LIKE "%' . $_SESSION["searchText"] . '%"
+                        OR code LIKE "%' . $_SESSION["searchText"] . '%")';
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
 
-            <div class="row">
-                <div class="col">
-                    <button id="testButton" class="btn btn-danger">delete cart content</button>
-                    <p id="testP"></p>
-
-                    <button id="writeCart" class="btn btn-warning">write cart</button>
-                    <p id="cartP"></p>
-                </div>
-            </div>
+                include("shopComponents/pagination.php");
+            ?>
         </div>
     </div>
 
