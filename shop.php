@@ -41,80 +41,51 @@ require_once "shopComponents/scripts/config.php";
         include("shopComponents/modals/payment.html");
     ?>
 
-<div class="row">
-    <div class="col-md-3 mh-100 col-xs-2">
+<div class="row mh-100">
+    <div class="d-md-none col-xs-6 bg-light">
+        <div class="row">
+            <div class="col">
+                <img src="imgs/logo.jpg" class="d-inline-block img-fluid">
+            </div>
+            <div class="col">
+                <div class="container float-right justify-content-right">
+                    <a class="btn btn-outline-primary" role="button" data-toggle="modal" href="#navModal">
+                        <i class="bi bi-list"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="modal fade" id="navModal" tabindex="-1" aria-labelledby="navModal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Navigace</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body h-100">
+                            <div class="container-fluid">
+                                <?php include("shopComponents/navbarModal.php");?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-3 mh-100 d-none d-md-block">
         <?php include("shopComponents/navbar.php");?>
     </div>
-    <div class="col-md-9 col-xs-10">
+    <div class="col-md-8 col-xs-6 col-lg-9">
         <div class="d-flex align-items-center justify-content-center" id="shopLoading">
-            </br></br></br>
-            <div class="spinner-grow" role="status">
+            <div class="spinner-grow mt-5" role="status">
                 <span class="sr-only"></span>
             </div>
         </div>
-        <div class="row" id="shopBody">
-            <?php
-                if(!isset($_SESSION["selectedCategoryName"]) || !isset($_SESSION["selectedCategorySql"])){
-                    $_SESSION["selectedCategorySql"] = " BETWEEN 86 AND 142";
-                    $_SESSION["selectedCategoryName"] = "Všechny produkty";
-                }
-
-                if(!isset($_SESSION["selectedSortName"]) || !isset($_SESSION["selectedSortSql"])){
-                    $_SESSION["selectedSortName"] = 2;
-                    $_SESSION["selectedSortSql"] = 2;
-                }
-                    
-                if(!isset($_SESSION["openedPage"])){
-                    $_SESSION["openedPage"] = 1;
-                }
-
-                include("shopComponents/header.php");
-
-                $sql = 'SELECT * FROM part WHERE category' . $_SESSION["selectedCategorySql"] . searchItems() . '
-                    ORDER BY ' . $_SESSION["selectedSortSql"] . '
-                    LIMIT 40 OFFSET ' . ($_SESSION["openedPage"] -1) * 40 . ';';
-
-                //echo $sql;
-
-                if ($result = mysqli_query($link, $sql)) {
-                    if(mysqli_num_rows($result) > 0){
-                        while ($row = mysqli_fetch_row($result)) {
-                            echo '<div class="col-xs-12 col-lg-3 col-md-6">
-                                        <div class="card my-2">
-                                            <div class="card-img-top">
-                                                <img class="img-fluid d-block mx-auto" style="max-height: 200px;" src="' . $row[6] . '" alt="Card image cap">
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">' . $row[1] . '</h5>
-                                                <p class="card-text">Kód produktu: ' . $row[7] . '</p>
-                                                <button type="button" class="btn btn-primary partButton" data-part-id="' . $row[0] . '">
-                                                    Zobrazit detail
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>';
-                        }
-                    }
-                    else{
-                        echo "<br><br><p class='text-center'><b>" . $_SESSION["searchText"] . "</b>: žádná shoda</p><br><br>";
-                    }
-                    mysqli_free_result($result);
-                }
-                mysqli_close($link);
-
-                function searchItems(){
-                    if(isset($_SESSION["searchText"]) && $_SESSION["searchText"] != ""){
-                        return ' AND (name LIKE "%' . $_SESSION["searchText"] . '%"
-                        OR code LIKE "%' . $_SESSION["searchText"] . '%")';
-                    }
-                    else
-                    {
-                        return "";
-                    }
-                }
-
-                include("shopComponents/pagination.php");
-            ?>
+        <div class="col-md-8 col-xs-6 col-lg-9">
+            <div class="row" id="shopBody">
+                <?php include("shopComponents/shopBody.php");?>
+            </div>
         </div>
     </div>
 

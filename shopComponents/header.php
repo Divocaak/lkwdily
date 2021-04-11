@@ -1,5 +1,5 @@
 <div class="row mt-1">
-    <div class="col-2">
+    <div class="col-xs-2 col-md-3 col-lg-2">
         <div class="dropdown">
             <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="sortByDropdown"
                 data-toggle="dropdown" aria-expanded="false">Seřadit podle</a>
@@ -20,7 +20,7 @@
             </ul>
         </div>
     </div>
-    <div class="container col-2">
+    <div class="col-xs-2 col-md-3 col-lg-2">
         <div class="input-group" id="searchInputField">
             <input type="text" class="form-control sm-2" placeholder="Orig. číslo, název">
             <div class="input-group-append">
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="col-7">
+    <div class="col-xs-7 col-md-5 col-lg-7">
         <p>
             <?php
                 $sql = 'SELECT id FROM part WHERE category' . $_SESSION["selectedCategorySql"]. ';';
@@ -45,7 +45,7 @@
                 ?>
         </p>
     </div>
-    <div class="col-1">
+    <div class="col-xs-1 col-md-1 col-lg-1">
         <button type="button" class="btn btn-primary cartButton"><i class="bi bi-cart2"></i></button>
     </div>
 </div>

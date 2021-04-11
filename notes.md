@@ -16,9 +16,14 @@
 
 2. __Moje__
 
-    - [ ] bootstrap the shit out of it
-        - [ ] index
-        - [ ] shop
+    - [x] bootstrap the shit out of it
+        - [x] index
+        - [x] shop
+            - [x] scrollable modals
+            - [x] navbar na xs
+        - [x] login
+        - [x] register
+        - [x] změna hesla
     - [x] opravy úpravy
         - [x] změnit kurzor na kategorii, sortu a pagination
         - [x] vyhledávání
@@ -203,7 +208,7 @@
     $message = "<b>This is HTML message.</b>";
     $message .= "<h1>This is headline.</h1>";
 
-    $retval = mail ($to,$subject,$message);
+    $retval = mail($to,$subject,$message);
 
     if( $retval == true ) {
     echo "Message sent successfully...";

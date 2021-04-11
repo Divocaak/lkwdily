@@ -2,10 +2,10 @@
     <ul class="pagination justify-content-center">
         <?php
             echo '<li class="page-item ' . enableOrDisable(1) . '">
-                    <a class="page-link paginationPage" data-new-page-number="1">První</a>
+                    <a class="page-link paginationPage" data-new-page-number="1">&#60;&#60;</a>
                 </li>';
             echo '<li class="page-item ' . enableOrDisable(1) . '">
-                    <a class="page-link paginationPage" data-new-page-number="' . ($_SESSION["openedPage"] - 1) . '">Předchozí</a>
+                    <a class="page-link paginationPage" data-new-page-number="' . ($_SESSION["openedPage"] - 1) . '">&#60;</a>
                 </li>';
 
             $paginationActive = ($_SESSION["openedPage"] == 1 ? 0 : ($_SESSION["openedPage"] == $pagesCount ? ($pagesCount > 2 ? -2 : -1) : -1));
@@ -22,10 +22,10 @@
             }
 
             echo '<li class="page-item ' . enableOrDisable($pagesCount) . '">
-                    <a class="page-link paginationPage" data-new-page-number="' . ($_SESSION["openedPage"] + 1) . '">Další</a>
+                    <a class="page-link paginationPage" data-new-page-number="' . ($_SESSION["openedPage"] + 1) . '">&#62;</a>
                 </li>';
             echo '<li class="page-item ' . enableOrDisable($pagesCount) . '">
-                <a class="page-link paginationPage" data-new-page-number="' . ($pagesCount - 1) . '">Poslední</a>
+                <a class="page-link paginationPage" data-new-page-number="' . ($pagesCount - 1) . '">&#62;&#62;</a>
             </li>';
 
             function enableOrDisable($checkWith){
