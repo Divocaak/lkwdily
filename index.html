@@ -21,11 +21,6 @@
             height: 1080px;
         }
         
-        .textBox {
-            position: relative;
-            padding: 3em 10em;
-        }
-        
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 150px;
@@ -76,7 +71,7 @@
     </nav>
 
     <div class="container-fluid bgImage" style="background-image: url(imgs/00.jpg);"></div>
-    <div class="container-fluid textBox" id="eshop">
+    <div class="container-fluid px-3 py-5" id="eshop">
         <div class="row">
             <div class="col text-center">
                 <h1>E-shop</h1>
@@ -91,14 +86,14 @@
     </div>
 
     <div class="container-fluid bgImage" style="background-image: url(imgs/01.jpg);"></div>
-    <div class="container-fluid textBox" id="catalogs">
+    <div class="container-fluid px-3 py-5" id="catalogs">
         <h1>Katalogy karosářských dílů</h1><br><br>
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col"><img src="imgs/cospel.png" style="height: 75px; width: auto;"></th>
-                    <th scope="col"><img src="imgs/covind.jpg" style="height: 40px; width: auto;"></th>
+                    <th scope="col"><img src="imgs/cospel.png" class="img-fluid" style="max-height: 100px;"></th>
+                    <th scope="col"><img src="imgs/covind.jpg" class="img-fluid" style="max-height: 100px;"></th>
                 </tr>
             </thead>
             <tbody>
@@ -142,7 +137,7 @@
     </div>
 
     <div class="container-fluid bgImage" style="background-image: url(imgs/narazniky.jpg);"></div>
-    <div class="container-fluid textBox" id="paintShop">
+    <div class="container-fluid px-3 py-5" id="paintShop">
         <h1>Lakovna</h1><br>
         <div class="row">
             <div class="col">
@@ -188,7 +183,7 @@
     </div>
 
     <div class="container-fluid bgImage" style="background-image: url(imgs/02.jpg);"></div>
-    <div class="container-fluid textBox" id="transport">
+    <div class="container-fluid px-3 py-5" id="transport">
         <h1>Doprava</h1>
         <p>Dopravu zboží zajišťujeme po České a Slovenské republice prostřednictvím smluvně zajištěných dopravců PPL a Toptrans</p><br>
         <div class="row">
@@ -212,7 +207,7 @@
     </div>
 
     <div class="container-fluid bgImage" style="background-image: url(imgs/03.jpg);"></div>
-    <div class="container-fluid textBox" id="terms">
+    <div class="container-fluid px-3 py-5" id="terms">
         <div class="row">
             <div class="col text-center">
                 <h1>Obchodní podmínky</h1>
@@ -401,7 +396,7 @@
     </div>
 
     <div class="container-fluid bgImage" style="background-image: url(imgs/04.jpg);"></div>
-    <div class="container-fluid textBox" id="contacts">
+    <div class="container-fluid px-3 py-5" id="contacts">
         <div class="row">
             <div class="col">
                 <p>IČ: 28113080</p>
@@ -436,10 +431,12 @@
                 <p>Pátek 8 - 17 hod</p>
             </div>
             <div class="col">
-                <iframe width="600" height="450" style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6036.718737052956!2d14.71276443502916!3d49.084869107047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x98e466fe4a883f30!2sPEVARO+s.r.o.!5e1!3m2!1scs!2scz!4v1537880887445"
-                    frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6036.718737052956!2d14.71276443502916!3d49.084869107047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x98e466fe4a883f30!2sPEVARO+s.r.o.!5e1!3m2!1scs!2scz!4v1537880887445" allowfullscreen="allowfullscreen"></iframe>
+                </div>
             </div>
         </div>
+    </div>
     </div>
 
     <div class="container-fluid bgImage" style="background-image: url(imgs/05.jpg);"></div>

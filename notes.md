@@ -12,13 +12,38 @@
 
     - [x] original čísla místo popisu produktu
     - [x] kategorie všechny, krom: motorové díly, filtry, návěsy
-    - [ ] vyhledávání podle jména a original čísla
+    - [x] vyhledávání podle jména a original čísla
 
 2. __Moje__
 
-    - [ ] pokud vyhledávám
-        - [ ] zůstaň v kategorii
-        - [ ] vyhledávaný string vpiš do inoutfieldu
+    - [x] bootstrap the shit out of it
+        - [x] index
+        - [x] shop
+            - [x] scrollable modals
+            - [x] navbar na xs
+        - [x] login
+        - [x] register
+        - [x] změna hesla
+    - [x] opravy úpravy
+        - [x] změnit kurzor na kategorii, sortu a pagination
+        - [x] vyhledávání
+            - [x] vyhledávaný string vpiš do inputfieldu
+            - [x] zrušit kategorii
+            - [x] zrušit pagination
+            - [x] nechat sort
+        - [x] změna kategorie
+            - [x] zrušit pagination
+            - [x] zrušit vyhledávání
+            - [x] nechat sort
+        - [x] změna pagination
+            - [x] nechat kategorii
+            - [x] nechat vyhledávání
+            - [x] nechat sort
+        - [x] sort
+            - [x] zrušit pagination
+            - [x] nechat kategorii
+            - [x] nechat vyhledávání
+    - [x] loading na stránce!
     - [x] MAJOR BUG V ROZKLIKÁVÁNÍ ITEMU
     - [x] kategorie
         - [x] databáze
@@ -183,7 +208,7 @@
     $message = "<b>This is HTML message.</b>";
     $message .= "<h1>This is headline.</h1>";
 
-    $retval = mail ($to,$subject,$message);
+    $retval = mail($to,$subject,$message);
 
     if( $retval == true ) {
     echo "Message sent successfully...";
